@@ -161,4 +161,7 @@ export const getRouterData = {
   '/components/toast': {
     component: dynamicWrapper([], () => import('../pages/components/toast')),
   },
+  '/components/demo': {
+    component: dynamicWrapper([], () => import('../pages/components/demo')),
+  },
 };

@@ -3,6 +3,7 @@ import { MenuData } from '../component/SubMenus';
 export const componentMenus: MenuData[] = [
   { path: '/components/about', name: '关于 UIW' },
   { divider: true, name: "通用" },
+  { path: "/components/demo", name: "demo 我是测试" },
   { path: "/components/button", name: "Button 按钮" },
   { path: "/components/icon", name: "Icon 图标" },
   { path: "/components/typography", name: "Typography 排版" },
@@ -39,6 +40,7 @@ export const componentMenus: MenuData[] = [
   { path: "/components/masklayer", name: "MaskLayer 遮罩层" },
   { path: "/components/result", name: "Result 结果页" },
   { path: "/components/toast", name: "Toast 轻提示" },
+  
 ];
 
 export const docsMenus: MenuData[] = [
