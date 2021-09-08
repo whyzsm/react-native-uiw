@@ -1,0 +1,10 @@
+export declare type Colors = 'green' | 'blue' | 'cyan' | 'navy' | 'yellow' | 'orange' | 'red';
+export declare const green = "#28a745";
+export declare const blue = "#008EF0";
+export declare const cyan = "#1EABCD";
+export declare const navy = "#393E48";
+export declare const yellow = "#ffc107";
+export declare const orange = "#F95C2B";
+export declare const red = "#dc3545";
+export declare const black = "#000000";
+export declare const white = "#ffffff";
