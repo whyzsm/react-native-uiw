@@ -1,90 +1,57 @@
-import React from 'react';
+import { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import { DefaultProps } from '../../';
+import ButtonStyle from '../../component/ButtonStyle';
 import styles from './index.module.less';
-import FooterTitle from '../../component/Footer'
-import { Layout, Row, Col } from 'uiw';
-const { Footer, Content, Header } = Layout;
+import FooterTitle from '../../component/Footer';
+
+const data: { username: string; nickname?: string }[] = [
+  { username: 'yaochuxia' },
+  { username: 'xingyuefeng', nickname: 'xyf' },
+  { username: 'ChenlingasMx', nickname: 'Chenling' },
+  { username: 'matuancc', nickname: 'cc' },
+  { username: 'wj0990', nickname: 'wangjie' },
+  { username: 'yaob421123', nickname: 'yaobin' },
+  { username: 'jaywcjlove', nickname: '小弟调调™' },
+  { username: 'didiboji', nickname: 'didiboji' },
+  { username: 'Amber-Nan', nickname: 'Amber-Nan' },
+  { username: 'cuilanxin', nickname: 'cuilanxin' },
+  { username: 'zuojiahui', nickname: '左嘉辉' },
+  { username: 'hy916', nickname: 'huyi' },
+  { username: 'dibenny', nickname: 'dibenny' },
+  { username: 'huqiaoli', nickname: 'huqiaoli' },
+];
 
 export default function Team(props: DefaultProps) {
-  const developInfo = [
-    { userName: "jaywcjlove", name: "小弟调调™", id: 1 },
-    { userName: "xingyuefeng", name: "xyf", id: 2 },
-    { userName: "ChenlingasMx", name: "Chenling", id: 3 },
-    { userName: "matuancc", name: "cc", id: 4 },
-    { userName: "yaochuxia", name: "yaochuxia", id: 5 },
-    { userName: "wj0990", name: "wangjie", id: 6 },
-  ]
-  const designInfo = [
-    { userName: "jaywcjlove", name: "小弟调调™", id: 1 },
-    { userName: "matuancc", name: "cc", id: 4 },
-    { userName: "yaochuxia", name: "yaochuxia", id: 5 },
-  ]
-  const documentInfo = [
-    { userName: "jaywcjlove", name: "小弟调调™", id: 1 },
-    { userName: "ChenlingasMx", name: "Chenling", id: 3 },
-  ]
   return (
-    <Layout>
-      <Header style={{ background: "#fff" }}>
+    <Fragment>
+      <section className={styles.warpper}>
+        <header className={styles.header}>
+          <h2>Development & Design team</h2>
+        </header>
+        <ul className={styles.team}>
+          {data.map(({ username, nickname }, idx) => (
+            <li key={idx}>
+              <a href={`https://github.com/${username}`} target="__blank">
+                <img src={`https://github.com/${username}.png?size=90`} alt={nickname || username} />
+                <span>{nickname || username}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <article className={styles.article}>
+        <h3>欢迎参与文档编辑 & 组件开发</h3>
         <div>
-          <span style={{ color: "#697b8c", fontSize: 16, fontWeight: 500 }}>UIW Mobile RN 一个基于 React Native 的 UI 组件库</span>
+          <ButtonStyle>
+            <Link to="/docs/development/components">参与组件开发</Link>
+          </ButtonStyle>
+          <ButtonStyle>
+            <Link to="/docs/development/document">参与文档编辑</Link>
+          </ButtonStyle>
         </div>
-      </Header>
-      <Content>
-        <Row justify="flex-start">
-          <Col className={styles.warpper}>
-            <div style={{ display: "flex", justifyItems: 'center', alignItems: "flex-start", flexDirection: 'column' }}>
-              <h4 style={{ fontSize: 20, fontFamily: "fantasy", fontWeight: 500 }}>开发</h4>
-              <AvatarList avatarInfo={developInfo} />
-            </div>
-          </Col>
-          <Col className={styles.warpper}>
-            <div style={{ display: "flex", justifyItems: 'center', alignItems: "flex-start", flexDirection: 'column' }}>
-              <h4 style={{ fontSize: 20, fontFamily: "fantasy", fontWeight: 500 }}>设计</h4>
-              <AvatarList avatarInfo={designInfo} />
-            </div>
-          </Col>
-          <Col className={styles.warpper}>
-            <div style={{ display: "flex", justifyItems: 'center', alignItems: "flex-start", flexDirection: 'column' }}>
-              <h4 style={{ fontSize: 20, fontFamily: "fantasy", fontWeight: 500 }}>文档</h4>
-              <AvatarList avatarInfo={documentInfo} />
-            </div>
-          </Col>
-        </Row>
-      </Content>
-      <Footer>
-        < FooterTitle />
-      </Footer>
-    </Layout >
+      </article>
+      <FooterTitle />
+    </Fragment>
   );
 }
-
-type PropsDeafult = {
-  avatarInfo: Array<{
-    userName: string;
-    name: string;
-    id: number
-  }>
-}
-
-function AvatarList(props: PropsDeafult) {
-  const { avatarInfo = [] } = props
-  return (
-    <div className={styles.flex_item}>
-      {
-        avatarInfo.map(item =>
-          <span className={styles.avatar} key={item.id}>
-            <div className={styles.center}>
-              <a href={`https://github.com/${item.userName}`} target="__blank">
-                <img src={`https://avatars.githubusercontent.com/${item.userName}`} alt={item.name} />
-              </a>
-              <span style={{ fontSize: 18 }}>{item.name}</span>
-            </div>
-          </span>
-        )
-      }
-    </div>
-  )
-}
-
-

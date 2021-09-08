@@ -2,11 +2,12 @@ import { Loader } from 'uiw';
 import dynamic from 'react-dynamic-loadable';
 import { store } from '../models';
 
-
 function Loading() {
-  return <div style={{ textAlign: 'center', padding: '50px 0 50px 0'}}>
-    <Loader color="#333" tip="页面加载中..." />
-  </div>
+  return (
+    <div style={{ textAlign: 'center', padding: '50px 0 50px 0' }}>
+      <Loader color="#333" tip="页面加载中..." />
+    </div>
+  );
 }
 
 // wrapper of dynamic
@@ -35,9 +36,6 @@ export const getRouterData = {
   '/team': {
     component: dynamicWrapper([], () => import('../pages/team')),
   },
-  '/docs': {
-    component: dynamicWrapper([], () => import('../pages/docs')),
-  },
   '/docs/getting-started': {
     component: dynamicWrapper([], () => import('../pages/docs/getting-started')),
   },
@@ -59,12 +57,18 @@ export const getRouterData = {
   '/docs/app-store/android': {
     component: dynamicWrapper([], () => import('../pages/docs/app-store/android')),
   },
-  '/docs/development': {
-    component: dynamicWrapper([], () => import('../pages/docs/development')),
+  '/docs/development/document': {
+    component: dynamicWrapper([], () => import('../pages/docs/development/document')),
   },
-  // '/components': {
-  //   component: dynamicWrapper([], () => import('../layouts/ComponentsLayout')),
-  // },
+  '/docs/development/components': {
+    component: dynamicWrapper([], () => import('../pages/docs/development/components')),
+  },
+  '/docs/awesome-react-native': {
+    component: dynamicWrapper([], () => import('../pages/docs/awesome-react-native')),
+  },
+  '/docs/react-native-template': {
+    component: dynamicWrapper([], () => import('../pages/docs/react-native-template')),
+  },
   '/components/about': {
     component: dynamicWrapper([], () => import('../pages/components/about')),
   },
@@ -106,6 +110,9 @@ export const getRouterData = {
   },
   '/components/radio': {
     component: dynamicWrapper([], () => import('../pages/components/radio')),
+  },
+  '/components/rating': {
+    component: dynamicWrapper([], () => import('../pages/components/rating')),
   },
   '/components/segmentedcontrol': {
     component: dynamicWrapper([], () => import('../pages/components/segmentedcontrol')),
@@ -161,7 +168,55 @@ export const getRouterData = {
   '/components/toast': {
     component: dynamicWrapper([], () => import('../pages/components/toast')),
   },
+<<<<<<< HEAD
   '/components/demo': {
     component: dynamicWrapper([], () => import('../pages/components/demo')),
+=======
+  '/components/steps': {
+    component: dynamicWrapper([], () => import('../pages/components/steps')),
+  },
+  '/components/timeLine': {
+    component: dynamicWrapper([], () => import('../pages/components/timeLine')),
+  },
+  '/components/tabs': {
+    component: dynamicWrapper([], () => import('../pages/components/tabs')),
+  },
+  '/components/quicklist': {
+    component: dynamicWrapper([], () => import('../pages/components/quicklist')),
+  },
+  '/components/speeddial': {
+    component: dynamicWrapper([], () => import('../pages/components/speeddial')),
+  },
+  '/components/progress': {
+    component: dynamicWrapper([], () => import('../pages/components/progress')),
+  },
+  '/components/card': {
+    component: dynamicWrapper([], () => import('../pages/components/card')),
+  },
+  '/components/noticebar': {
+    component: dynamicWrapper([], () => import('../pages/components/noticebar')),
+  },
+
+  '/components/stepper': {
+    component: dynamicWrapper([], () => import('../pages/components/stepper')),
+  },
+  '/components/swiper': {
+    component: dynamicWrapper([], () => import('../pages/components/swiper')),
+  },
+  '/components/tooltip': {
+    component: dynamicWrapper([], () => import('../pages/components/tooltip')),
+  },
+  '/components/tile': {
+    component: dynamicWrapper([], () => import('../pages/components/tile')),
+  },
+  '/components/transitionImage': {
+    component: dynamicWrapper([], () => import('../pages/components/transitionImage')),
+  },
+  '/components/cardcollapse': {
+    component: dynamicWrapper([], () => import('../pages/components/cardcollapse')),
+  },
+  '/components/actionSheet': {
+    component: dynamicWrapper([], () => import('../pages/components/actionSheet')),
+>>>>>>> 251f51e08485bb5501a94b4527fe4feb7f009056
   },
 };

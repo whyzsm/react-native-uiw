@@ -3,12 +3,20 @@
   position: relative;
   a {
     color: #5a5a5a;
-    padding: 10px 0;
-    display: block;
-    transition: all .3s;
+    transition: all 0.3s;
     margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 10px 0;
+    svg {
+      fill: #bbb;
+      transition: fill 0.3s;
+    }
     &:hover {
       color: #1890ff;
+      svg {
+        fill: #1890ff;
+      }
     }
     &:global(.active) {
       color: #1890ff;
@@ -26,9 +34,10 @@
   border-bottom: 1px solid #eaeaea;
 }
 
-.warpper, .inner {
+.warpper,
+.inner {
   border-right: 1px solid #eaeaea;
-  min-width: 260px;
+  min-width: 270px;
 }
 
 .inner {
@@ -37,7 +46,7 @@
   padding-bottom: 30px;
   padding-top: 20px;
   box-sizing: border-box;
-  height: 100%;
   position: fixed;
   top: 60px;
+  bottom: 0;
 }
