@@ -219,4 +219,7 @@ export const getRouterData = {
     component: dynamicWrapper([], () => import('../pages/components/actionSheet')),
 >>>>>>> 251f51e08485bb5501a94b4527fe4feb7f009056
   },
+  '/components/search-input-bar': {
+    component: dynamicWrapper([], () => import('../pages/components/search-input-bar')),
+  },
 };
